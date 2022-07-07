@@ -1,0 +1,24 @@
+input_a=list(int(i) for i in input().split( ))
+sort_a = sorted(input_a)
+count=1
+yaku_count=0
+
+for i in range(1,5):
+    if(sort_a[i]==sort_a[i-1]):
+        count+=1
+        if(i==4):
+            yaku_count+=count
+    elif(count!=1):
+        yaku_count+=count
+        count=1
+
+if(yaku_count==2):
+    print("ONE PAIR")
+elif(yaku_count==3):
+    print("TREE CARD")
+elif(yaku_count==4):
+    print("TWO PAIR")
+elif(yaku_count==5):
+    print("FULL HOUSE")
+else:
+    print("NO HAND")
